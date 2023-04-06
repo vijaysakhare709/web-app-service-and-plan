@@ -63,3 +63,4 @@ resource "azurerm_app_service_active_slot" "example" {
   app_service_slot_name = azurerm_linux_web_app_slot.exambbple.name
 }
 
+
