@@ -44,11 +44,22 @@ depends_on = [
 ]
 }
 
-resource "azurerm_app_service_source_control" "wwwexample" {
-  app_id   = azurerm_linux_web_app.hello1.id
-  repo_url = "https://github.com/Azure-Samples/python-docs-hello-world" 3 source code repo
-  branch   = "master"
-  use_manual_integration = true
+resource "azurerm_linux_web_app_slot" "exambbple" {
+  name           = "example-vvkj-slot"
+  app_service_id = azurerm_linux_web_app.hello1.id
+
+  site_config {}
+
+depends_on =  [
+    azurerm_app_service_plan.hello
+]
+
 }
 
+
+resource "azurerm_app_service_active_slot" "example" {
+  resource_group_name   = azurerm_resource_group.example.name
+  app_service_name      = azurerm_linux_web_app.hello1.name
+  app_service_slot_name = azurerm_linux_web_app_slot.exambbple.name
+}
 
