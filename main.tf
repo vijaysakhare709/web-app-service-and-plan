@@ -44,4 +44,11 @@ depends_on = [
 ]
 }
 
+resource "azurerm_app_service_source_control" "wwwexample" {
+  app_id   = azurerm_linux_web_app.hello1.id
+  repo_url = "https://github.com/Azure-Samples/python-docs-hello-world" 3 source code repo
+  branch   = "master"
+  use_manual_integration = true
+}
+
 
