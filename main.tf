@@ -44,6 +44,7 @@ depends_on = [
 ]
 }
 
+# deployment slot
 resource "azurerm_linux_web_app_slot" "exambbple" {
   name           = "example-vvkj-slot"
   app_service_id = azurerm_linux_web_app.hello1.id
